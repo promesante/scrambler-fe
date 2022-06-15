@@ -1,0 +1,30 @@
+{
+			"name": "scrambler",
+			"scripts": {
+						"ancient": "clojure -Sdeps '{:deps {com.github.liquidz/antq {:mvn/version \"RELEASE\"}}}' -m antq.core",
+						"watch": "npx shadow-cljs watch app browser-test karma-test",
+						"release": "npx shadow-cljs release app",
+						"build-report": "npx shadow-cljs run shadow.cljs.build-report app target/build-report.html",
+						"ci": "npx shadow-cljs compile karma-test && npx karma start --single-run --reporters junit,dots"
+			},
+			"dependencies": {
+						"@emotion/react": "11.9.0",
+						"@emotion/styled": "11.8.1",
+						"@material-ui/core": "^4.11.0",
+						"@material-ui/icons": "^4.9.1",
+						"@material-ui/lab": "^4.0.0-alpha.56",
+						"@mui/material": "5.6.2",
+						"highlight.js": "11.1.0",
+						"jss": "^10.9.0",
+						"jss-plugin-nested": "^10.9.0",
+						"react": "17.0.2",
+						"react-dom": "17.0.2"
+			},
+			"devDependencies": {
+						"shadow-cljs": "2.18.0",
+						"karma": "6.3.11",
+						"karma-chrome-launcher": "3.1.0",
+						"karma-cljs-test": "0.1.0",
+						"karma-junit-reporter": "2.0.1"
+			}
+}
